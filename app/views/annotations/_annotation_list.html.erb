@@ -8,7 +8,7 @@
       <th class="col-md-1 text-center"></th>
     </thead>
     <% @study.annotations.each do |annotation| %>
-      <tr>
+      <tr onClick=location.href="/annotations/<%= annotation.id %>/edit">
         <td><%= annotation.label %></td>
         <td><%= annotation.description %></td>
         <td><%= link_to 'Update', edit_annotation_path(annotation) %></td>
@@ -20,5 +20,5 @@
 
 <br>
 
-<%= link_to 'New Info', new_annotation_path(:id => @study) %>
+<%= link_to 'Enter New Info', new_annotation_path(:id => @study) %>
 
