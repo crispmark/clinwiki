@@ -2,8 +2,6 @@
   <h3><%= @study.brief_title %></h3>
 </div>
 
-<h4>Add a Review</h4>
-
 <%= form_for(@review) do |f| %>
   <% if @review.errors.any? %>
     <div id="error-explanation" class="alert alert-danger alert-dismissable">
@@ -20,13 +18,15 @@
 
   <div id="star-rating"></div>
   <div class="form-group">
-    <br>
     <%= f.label :comment %>
+  </div>
+  <div class="form-group">
     <%= f.text_area :comment, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= hidden_field_tag(:nct_id,@review.nct_id) %>
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit "Save Review", class: "btn btn-primary" %>
+    <%= link_to 'Cancel', reviews_path(:nct_id=>params['nct_id']), class: "button cancel" %>
   </div>
 <% end %>
 

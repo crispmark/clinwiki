@@ -1,10 +1,8 @@
-
-
 button, input[type="submit"], a.button {
   @include transition(all 150ms ease-in-out);
   background-color: $button-color;
   color: $button-text-color;
-  font-size: 1rem;
+  font-size: 1.6rem;
   padding: 1rem 2.5rem;
   border: 3px solid transparent;
   border-color: $button-color;
@@ -13,7 +11,7 @@ button, input[type="submit"], a.button {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
-  border-radius: $border-radius;
+  border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: $font-sans;
@@ -37,8 +35,17 @@ button, input[type="submit"], a.button {
     }
   }
 
+  &.cancel {
+    opacity: 0.65;
+    float: right;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
   &.transparent {
-    opacity: 0.75;
+    opacity: 0.65;
 
     &:hover {
       opacity: 1;
@@ -88,6 +95,7 @@ button, input[type="submit"], a.button {
     &.hasIcon {
       padding-left: 90px;
     }
+
   }
 
   &.extraLarge {
